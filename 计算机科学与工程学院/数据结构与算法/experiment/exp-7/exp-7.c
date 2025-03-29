@@ -1,4 +1,4 @@
-#define  _CRT_SECURE_NO_WARNINGS
+ï»¿#define  _CRT_SECURE_NO_WARNINGS
 #include "seqlist.h"
 
 int main() {
@@ -7,12 +7,12 @@ int main() {
     RecType R[MAXL];
 
     CreateList(R, a, n);
-    printf("ÅÅĞòÇ°: ");
+    printf("æ’åºå‰: ");
     DispList(R, n);
 
     InsertSort(R, n);
 
-    printf("ÅÅĞòºó: ");
+    printf("æ’åºå: ");
     DispList(R, n);
 
     return 0;

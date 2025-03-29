@@ -1,4 +1,4 @@
-#ifndef GRAPH_H
+ï»¿#ifndef GRAPH_H
 #define GRAPH_H
 
 #include <stdio.h>
@@ -8,40 +8,40 @@
 #define MAXV 100
 typedef char InfoType;
 
-// ¶¥µãÀàĞÍ
+// é¡¶ç‚¹ç±»å‹
 typedef struct {
     int no;
     InfoType info;
 } VertexType;
 
-// ÁÚ½Ó¾ØÕóÀàĞÍ
+// é‚»æ¥çŸ©é˜µç±»å‹
 typedef struct {
     int edges[MAXV][MAXV];
     int n, e;
     VertexType vexs[MAXV];
 } MatGraph;
 
-// ±ß½ÚµãÀàĞÍ
+// è¾¹èŠ‚ç‚¹ç±»å‹
 typedef struct ANode {
     int adjvex;
     struct ANode* nextarc;
     int weight;
 } ArcNode;
 
-// ÁÚ½Ó±íÍ·½ÚµãÀàĞÍ
+// é‚»æ¥è¡¨å¤´èŠ‚ç‚¹ç±»å‹
 typedef struct VNode {
     InfoType info;
     int count;
     ArcNode* firstarc;
 } VNode;
 
-// ÁÚ½Ó±íÀàĞÍ
+// é‚»æ¥è¡¨ç±»å‹
 typedef struct {
     VNode adjlist[MAXV];
     int n, e;
 } AdjGraph;
 
-// º¯ÊıÉùÃ÷
+// å‡½æ•°å£°æ˜
 void CreateMat(MatGraph* g, int A[MAXV][MAXV], int n, int e);
 void DispMat(MatGraph g);
 void CreateAdj(AdjGraph** G, int A[MAXV][MAXV], int n, int e);

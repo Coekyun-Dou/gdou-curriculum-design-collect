@@ -1,43 +1,43 @@
-// linklist.c
+ï»¿// linklist.c
 #include "linklist.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-// Í·²å·¨½¨Á¢µ¥Á´±í
+// å¤´æ’æ³•å»ºç«‹å•é“¾è¡¨
 void CreateListF(LinkNode** L, ElemType a[], int n) {
     LinkNode* s;
-    *L = (LinkNode*)malloc(sizeof(LinkNode));  // ´´½¨Í·½áµã
+    *L = (LinkNode*)malloc(sizeof(LinkNode));  // åˆ›å»ºå¤´ç»“ç‚¹
     (*L)->next = NULL;
     for (int i = 0; i < n; i++) {
-        s = (LinkNode*)malloc(sizeof(LinkNode)); // ´´½¨ĞÂ½áµãs
+        s = (LinkNode*)malloc(sizeof(LinkNode)); // åˆ›å»ºæ–°ç»“ç‚¹s
         s->data = a[i];
         s->next = (*L)->next;
         (*L)->next = s;
     }
 }
 
-// Î²²å·¨½¨Á¢µ¥Á´±í
+// å°¾æ’æ³•å»ºç«‹å•é“¾è¡¨
 void CreateListR(LinkNode** L, ElemType a[], int n) {
     LinkNode* s, * r;
-    *L = (LinkNode*)malloc(sizeof(LinkNode));   // ´´½¨Í·½áµã
+    *L = (LinkNode*)malloc(sizeof(LinkNode));   // åˆ›å»ºå¤´ç»“ç‚¹
     (*L)->next = NULL;
-    r = *L;                                     // rÊ¼ÖÕÖ¸ÏòÎ²½áµã,¿ªÊ¼Ê±Ö¸ÏòÍ·½áµã
+    r = *L;                                     // rå§‹ç»ˆæŒ‡å‘å°¾ç»“ç‚¹,å¼€å§‹æ—¶æŒ‡å‘å¤´ç»“ç‚¹
     for (int i = 0; i < n; i++) {
-        s = (LinkNode*)malloc(sizeof(LinkNode)); // ´´½¨ĞÂ½áµãs
+        s = (LinkNode*)malloc(sizeof(LinkNode)); // åˆ›å»ºæ–°ç»“ç‚¹s
         s->data = a[i];
-        r->next = s;                             // ½«½áµãs²åÈër½áµãÖ®ºó
+        r->next = s;                             // å°†ç»“ç‚¹sæ’å…¥rç»“ç‚¹ä¹‹å
         r = s;
     }
-    r->next = NULL;                             // Î²½áµãnextÓòÖÃÎªNULL
+    r->next = NULL;                             // å°¾ç»“ç‚¹nextåŸŸç½®ä¸ºNULL
 }
 
-// ³õÊ¼»¯ÏßĞÔ±í
+// åˆå§‹åŒ–çº¿æ€§è¡¨
 void InitList(LinkNode** L) {
-    *L = (LinkNode*)malloc(sizeof(LinkNode));   // ´´½¨Í·½áµã
-    (*L)->next = NULL;                          // µ¥Á´±íÖÃÎª¿Õ±í
+    *L = (LinkNode*)malloc(sizeof(LinkNode));   // åˆ›å»ºå¤´ç»“ç‚¹
+    (*L)->next = NULL;                          // å•é“¾è¡¨ç½®ä¸ºç©ºè¡¨
 }
 
-// Ïú»ÙÏßĞÔ±í
+// é”€æ¯çº¿æ€§è¡¨
 void DestroyList(LinkNode** L) {
     LinkNode* pre, * p;
     p = *L;
@@ -49,12 +49,12 @@ void DestroyList(LinkNode** L) {
     *L = NULL;
 }
 
-// ÅĞÏßĞÔ±íÊÇ·ñÎª¿Õ±í
+// åˆ¤çº¿æ€§è¡¨æ˜¯å¦ä¸ºç©ºè¡¨
 int ListEmpty(LinkNode* L) {
     return L->next == NULL;
 }
 
-// ÇóÏßĞÔ±íµÄ³¤¶È
+// æ±‚çº¿æ€§è¡¨çš„é•¿åº¦
 int ListLength(LinkNode* L) {
     int i = 0;
     LinkNode* p = L->next;
@@ -65,7 +65,7 @@ int ListLength(LinkNode* L) {
     return i;
 }
 
-// Êä³öÏßĞÔ±í
+// è¾“å‡ºçº¿æ€§è¡¨
 void DispList(LinkNode* L) {
     LinkNode* p = L->next;
     while (p != NULL) {
@@ -75,7 +75,7 @@ void DispList(LinkNode* L) {
     printf("\n");
 }
 
-// ÇóÏßĞÔ±íÖĞµÚi¸öÔªËØÖµ
+// æ±‚çº¿æ€§è¡¨ä¸­ç¬¬iä¸ªå…ƒç´ å€¼
 int GetElem(LinkNode* L, int i, ElemType* e) {
     int j = 0;
     LinkNode* p = L;
@@ -88,7 +88,7 @@ int GetElem(LinkNode* L, int i, ElemType* e) {
     return 1;
 }
 
-// ²éÕÒµÚÒ»¸öÖµÓòÎªeµÄÔªËØĞòºÅ
+// æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå€¼åŸŸä¸ºeçš„å…ƒç´ åºå·
 int LocateElem(LinkNode* L, ElemType e) {
     int i = 1;
     LinkNode* p = L->next;
@@ -100,7 +100,7 @@ int LocateElem(LinkNode* L, ElemType e) {
     return i;
 }
 
-// ²åÈëµÚi¸öÔªËØ
+// æ’å…¥ç¬¬iä¸ªå…ƒç´ 
 int ListInsert(LinkNode** L, int i, ElemType e) {
     int j = 0;
     LinkNode* p = *L, * s;
@@ -116,7 +116,7 @@ int ListInsert(LinkNode** L, int i, ElemType e) {
     return 1;
 }
 
-// É¾³ıµÚi¸öÔªËØ
+// åˆ é™¤ç¬¬iä¸ªå…ƒç´ 
 int ListDelete(LinkNode** L, int i, ElemType* e) {
     int j = 0;
     LinkNode* p = *L, * q;

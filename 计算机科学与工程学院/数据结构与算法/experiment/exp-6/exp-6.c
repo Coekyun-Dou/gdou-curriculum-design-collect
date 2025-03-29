@@ -1,4 +1,4 @@
-#include "graph.h"
+ï»¿#include "graph.h"
 
 int main() {
     MatGraph g;
@@ -14,14 +14,14 @@ int main() {
     int n = 6, e = 10;
 
     CreateMat(&g, A, n, e);
-    printf("(1)Í¼GµÄÁÚ½Ó¾ØÕó:\n");
+    printf("(1)å›¾Gçš„é‚»æ¥çŸ©é˜µ:\n");
     DispMat(g);
 
     CreateAdj(&G, A, n, e);
-    printf("(2)Í¼GµÄÁÚ½Ó±í:\n");
+    printf("(2)å›¾Gçš„é‚»æ¥è¡¨:\n");
     DispAdj(G);
 
-    printf("(3)Ïú»ÙÍ¼GµÄÁÚ½Ó±í\n");
+    printf("(3)é”€æ¯å›¾Gçš„é‚»æ¥è¡¨\n");
     DestroyAdj(&G);
 
     return 0;

@@ -1,4 +1,4 @@
-// listack.c
+ï»¿// listack.c
 #include "listack.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,11 +32,11 @@ void Push(LinkStNode* s, ElemType e) {
 
 int Pop(LinkStNode* s, ElemType* e) {
     if (s->next == NULL) {
-        return 0;  // Õ»¿Õ£¬³öÕ»Ê§°Ü
+        return 0;  // æ ˆç©ºï¼Œå‡ºæ ˆå¤±è´¥
     }
     LinkStNode* p = s->next;
     *e = p->data;
     s->next = p->next;
     free(p);
-    return 1;  // ³öÕ»³É¹¦
+    return 1;  // å‡ºæ ˆæˆåŠŸ
 }

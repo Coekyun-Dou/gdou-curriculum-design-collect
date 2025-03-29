@@ -1,10 +1,10 @@
-#define  _CRT_SECURE_NO_WARNINGS
+Ôªø#define  _CRT_SECURE_NO_WARNINGS
 #include "seqlist.h"
 
 void CreateList(RecType R[], KeyType keys[], int n) {
     for (int i = 0; i < n; i++) {
         R[i].key = keys[i];
-        R[i].data = ' '; // ≥ı ºªØ∆‰À˚ ˝æ›œÓ
+        R[i].data = ' '; // ÂàùÂßãÂåñÂÖ∂‰ªñÊï∞ÊçÆÈ°π
     }
 }
 
@@ -19,15 +19,15 @@ void InsertSort(RecType R[], int n) {
     int i, j;
     RecType tmp;
     for (i = 1; i < n; i++) {
-        printf("  i=%d£¨≤Â»Î%d£¨≤Â»ÎΩ·π˚: ", i, R[i].key);
-        if (R[i].key < R[i - 1].key) { // ∑¥–Ú ±
+        printf("  i=%dÔºåÊèíÂÖ•%dÔºåÊèíÂÖ•ÁªìÊûú: ", i, R[i].key);
+        if (R[i].key < R[i - 1].key) { // ÂèçÂ∫èÊó∂
             tmp = R[i];
             j = i - 1;
-            do { // ’“R[i]µƒ≤Â»ÎŒª÷√
-                R[j + 1] = R[j]; // Ω´πÿº¸◊÷¥Û”⁄R[i].keyµƒº«¬º∫Û“∆
+            do { // ÊâæR[i]ÁöÑÊèíÂÖ•‰ΩçÁΩÆ
+                R[j + 1] = R[j]; // Â∞ÜÂÖ≥ÈîÆÂ≠óÂ§ß‰∫éR[i].keyÁöÑËÆ∞ÂΩïÂêéÁßª
                 j--;
             } while (j >= 0 && R[j].key > tmp.key);
-            R[j + 1] = tmp; // ‘⁄j+1¥¶≤Â»ÎR[i]
+            R[j + 1] = tmp; // Âú®j+1Â§ÑÊèíÂÖ•R[i]
         }
         DispList(R, n);
     }

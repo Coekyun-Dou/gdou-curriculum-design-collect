@@ -1,16 +1,16 @@
-// linklist.h
+ï»¿// linklist.h
 #ifndef LINKLIST_H
 #define LINKLIST_H
 
 typedef char ElemType;
 
-// µ¥Á´±í½Úµã½á¹¹Ìå¶¨Òå
+// å•é“¾è¡¨èŠ‚ç‚¹ç»“æ„ä½“å®šä¹‰
 typedef struct LNode {
     ElemType data;
     struct LNode* next;
 } LinkNode;
 
-// º¯ÊıÉùÃ÷
+// å‡½æ•°å£°æ˜
 void CreateListF(LinkNode** L, ElemType a[], int n);
 void CreateListR(LinkNode** L, ElemType a[], int n);
 void InitList(LinkNode** L);
@@ -18,9 +18,9 @@ void DestroyList(LinkNode** L);
 int ListEmpty(LinkNode* L);
 int ListLength(LinkNode* L);
 void DispList(LinkNode* L);
-int GetElem(LinkNode* L, int i, ElemType* e); // ĞŞ¸ÄÕâÀï£¬Ê¹ÓÃÖ¸Õë
+int GetElem(LinkNode* L, int i, ElemType* e); // ä¿®æ”¹è¿™é‡Œï¼Œä½¿ç”¨æŒ‡é’ˆ
 int LocateElem(LinkNode* L, ElemType e);
 int ListInsert(LinkNode** L, int i, ElemType e);
-int ListDelete(LinkNode** L, int i, ElemType* e); // ĞŞ¸ÄÕâÀï£¬Ê¹ÓÃÖ¸Õë
+int ListDelete(LinkNode** L, int i, ElemType* e); // ä¿®æ”¹è¿™é‡Œï¼Œä½¿ç”¨æŒ‡é’ˆ
 
 #endif // LINKLIST_H

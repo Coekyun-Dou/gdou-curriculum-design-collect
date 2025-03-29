@@ -1,4 +1,4 @@
-#define  _CRT_SECURE_NO_WARNINGS
+ï»¿#define  _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -118,12 +118,12 @@ int main() {
     SqString s, t;
     StrAssign(&s, "abcabcdabcdeabcdefabcdefg");
     StrAssign(&t, "abcdeabcdefab");
-    printf("´®s:"); DispStr(s);
-    printf("´®t:"); DispStr(t);
-    printf("¼òµ¥Æ¥ÅäËã·¨:\n");
-    printf("  tÔÚsÖĞµÄÎ»ÖÃ=%d\n", Index(s, t));
-    GetNext(t, next);            // ÓÉÄ£Ê½´®tÇó³önextÖµ
-    GetNextval(t, nextval);      // ÓÉÄ£Ê½´®tÇó³önextvalÖµ
+    printf("ä¸²s:"); DispStr(s);
+    printf("ä¸²t:"); DispStr(t);
+    printf("ç®€å•åŒ¹é…ç®—æ³•:\n");
+    printf("  tåœ¨sä¸­çš„ä½ç½®=%d\n", Index(s, t));
+    GetNext(t, next);            // ç”±æ¨¡å¼ä¸²tæ±‚å‡ºnextå€¼
+    GetNextval(t, nextval);      // ç”±æ¨¡å¼ä¸²tæ±‚å‡ºnextvalå€¼
     printf("    j   ");
     for (j = 0; j < t.length; j++)
         printf("%4d", j);
@@ -140,10 +140,10 @@ int main() {
     for (j = 0; j < t.length; j++)
         printf("%4d", nextval[j]);
     printf("\n");
-    printf("KMPËã·¨:\n");
-    printf("  tÔÚsÖĞµÄÎ»ÖÃ=%d\n", KMPIndex(s, t));
-    printf("¸Ä½øµÄKMPËã·¨:\n");
-    printf("  tÔÚsÖĞµÄÎ»ÖÃ=%d\n", KMPIndex1(s, t));
+    printf("KMPç®—æ³•:\n");
+    printf("  tåœ¨sä¸­çš„ä½ç½®=%d\n", KMPIndex(s, t));
+    printf("æ”¹è¿›çš„KMPç®—æ³•:\n");
+    printf("  tåœ¨sä¸­çš„ä½ç½®=%d\n", KMPIndex1(s, t));
     DestroyStr(&s); DestroyStr(&t);
     return 0;
 }

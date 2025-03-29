@@ -1,4 +1,4 @@
-#include "graph.h"
+ï»¿#include "graph.h"
 
 void CreateMat(MatGraph* g, int A[MAXV][MAXV], int n, int e) {
     int i, j;
@@ -15,7 +15,7 @@ void DispMat(MatGraph g) {
             if (g.edges[i][j] != INF)
                 printf("%4d", g.edges[i][j]);
             else
-                printf("%4s", "¡Ş");
+                printf("%4s", "âˆ");
         printf("\n");
     }
 }
@@ -25,9 +25,9 @@ void CreateAdj(AdjGraph** G, int A[MAXV][MAXV], int n, int e) {
     ArcNode* p, * tail = NULL;
     *G = (AdjGraph*)malloc(sizeof(AdjGraph));
     for (i = 0; i < n; i++) {
-        (*G)->adjlist[i].info = '\0'; // ³õÊ¼»¯¶¥µãĞÅÏ¢
-        (*G)->adjlist[i].count = 0;   // ³õÊ¼»¯Èë¶È
-        (*G)->adjlist[i].firstarc = NULL; // ³õÊ¼»¯ÁÚ½ÓÁ´±íÍ·Ö¸Õë
+        (*G)->adjlist[i].info = '\0'; // åˆå§‹åŒ–é¡¶ç‚¹ä¿¡æ¯
+        (*G)->adjlist[i].count = 0;   // åˆå§‹åŒ–å…¥åº¦
+        (*G)->adjlist[i].firstarc = NULL; // åˆå§‹åŒ–é‚»æ¥é“¾è¡¨å¤´æŒ‡é’ˆ
     }
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
@@ -35,12 +35,12 @@ void CreateAdj(AdjGraph** G, int A[MAXV][MAXV], int n, int e) {
                 p = (ArcNode*)malloc(sizeof(ArcNode));
                 p->adjvex = j;
                 p->weight = A[i][j];
-                p->nextarc = NULL; // ĞÂ½¨µÄ½ÚµãÖ¸ÏòNULL
+                p->nextarc = NULL; // æ–°å»ºçš„èŠ‚ç‚¹æŒ‡å‘NULL
                 if ((*G)->adjlist[i].firstarc == NULL) {
-                    (*G)->adjlist[i].firstarc = p; // Èç¹ûÁ´±íÎª¿Õ£¬ĞÂ½Úµã¼´ÎªÍ·½Úµã
+                    (*G)->adjlist[i].firstarc = p; // å¦‚æœé“¾è¡¨ä¸ºç©ºï¼Œæ–°èŠ‚ç‚¹å³ä¸ºå¤´èŠ‚ç‚¹
                 }
                 else {
-                    // ÕÒµ½Á´±íµÄÎ²²¿²¢Ìí¼ÓĞÂ½Úµã
+                    // æ‰¾åˆ°é“¾è¡¨çš„å°¾éƒ¨å¹¶æ·»åŠ æ–°èŠ‚ç‚¹
                     tail = (*G)->adjlist[i].firstarc;
                     while (tail->nextarc != NULL) {
                         tail = tail->nextarc;
@@ -57,21 +57,21 @@ void DispAdj(AdjGraph* G) {
     ArcNode* p;
     for (int i = 0; i < G->n; i++) {
         printf("%d: ", i);
-        int isFirst = 1; // ÓÃÓÚ±ê¼ÇÊÇ·ñÊÇµÚÒ»¸öÁÚ½Óµã
+        int isFirst = 1; // ç”¨äºæ ‡è®°æ˜¯å¦æ˜¯ç¬¬ä¸€ä¸ªé‚»æ¥ç‚¹
         p = G->adjlist[i].firstarc;
         while (p != NULL) {
             if (!isFirst) {
-                printf("¡ú"); // Èç¹û²»ÊÇµÚÒ»¸öÁÚ½Óµã£¬´òÓ¡¼ıÍ·
+                printf("â†’"); // å¦‚æœä¸æ˜¯ç¬¬ä¸€ä¸ªé‚»æ¥ç‚¹ï¼Œæ‰“å°ç®­å¤´
             }
             printf("%d[%d]", p->adjvex, p->weight);
-            isFirst = 0; // ¸üĞÂ±ê¼Ç£¬±íÊ¾ÒÑ¾­´òÓ¡ÁËÒ»¸öÁÚ½Óµã
+            isFirst = 0; // æ›´æ–°æ ‡è®°ï¼Œè¡¨ç¤ºå·²ç»æ‰“å°äº†ä¸€ä¸ªé‚»æ¥ç‚¹
             p = p->nextarc;
         }
         if (!isFirst) {
-            printf("^\n"); // Èç¹ûÓĞÁÚ½Óµã£¬´òÓ¡½áÊø·ûºÅ
+            printf("^\n"); // å¦‚æœæœ‰é‚»æ¥ç‚¹ï¼Œæ‰“å°ç»“æŸç¬¦å·
         }
         else {
-            printf("^\n"); // Èç¹ûÃ»ÓĞÁÚ½Óµã£¬Ò²´òÓ¡½áÊø·ûºÅ
+            printf("^\n"); // å¦‚æœæ²¡æœ‰é‚»æ¥ç‚¹ï¼Œä¹Ÿæ‰“å°ç»“æŸç¬¦å·
         }
     }
 }

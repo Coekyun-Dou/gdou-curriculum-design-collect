@@ -1,4 +1,4 @@
-#define  _CRT_SECURE_NO_WARNINGS
+ï»¿#define  _CRT_SECURE_NO_WARNINGS
 #include "seqlist.h"
 
 int main() {
@@ -6,10 +6,10 @@ int main() {
     RecType R[MAXL];
     KeyType a[] = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
     CreateList(R, a, n);
-    printf("ÅÅĞòÇ°: ");
+    printf("æ’åºå‰: ");
     DispList(R, n);
     BinInsertSort(R, n);
-    printf("ÅÅĞòºó: ");
+    printf("æ’åºå: ");
     DispList(R, n);
     return 0;
 }

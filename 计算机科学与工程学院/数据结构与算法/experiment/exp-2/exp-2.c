@@ -1,31 +1,31 @@
-#define  _CRT_SECURE_NO_WARNINGS
+ï»¿#define  _CRT_SECURE_NO_WARNINGS
 // exp-2.c
 #include "listack.h"
 #include <stdio.h>
 
 int main() {
     ElemType e;
-    LinkStNode* s = NULL; // ³õÊ¼»¯ s Îª NULL
-    printf("Á´Õ»sµÄ»ù±¾ÔËËãÈçÏÂ:\n");
-    printf("  (1)³õÊ¼»¯Õ»s\n");
+    LinkStNode* s = NULL; // åˆå§‹åŒ– s ä¸º NULL
+    printf("é“¾æ ˆsçš„åŸºæœ¬è¿ç®—å¦‚ä¸‹:\n");
+    printf("  (1)åˆå§‹åŒ–æ ˆs\n");
     InitStack(&s);
-    printf("  (2)Õ»Îª%s\n", (StackEmpty(s) ? "¿Õ" : "·Ç¿Õ"));
-    printf("  (3)ÒÀ´Î½øÕ»ÔªËØa,b,c,d,e\n");
+    printf("  (2)æ ˆä¸º%s\n", (StackEmpty(s) ? "ç©º" : "éç©º"));
+    printf("  (3)ä¾æ¬¡è¿›æ ˆå…ƒç´ a,b,c,d,e\n");
     Push(s, 'a');
     Push(s, 'b');
     Push(s, 'c');
     Push(s, 'd');
     Push(s, 'e');
-    printf("  (4)Õ»Îª%s\n", (StackEmpty(s) ? "¿Õ" : "·Ç¿Õ"));
-    printf("  (5)³öÕ»ĞòÁĞ:");
+    printf("  (4)æ ˆä¸º%s\n", (StackEmpty(s) ? "ç©º" : "éç©º"));
+    printf("  (5)å‡ºæ ˆåºåˆ—:");
     while (!StackEmpty(s)) {
         if (Pop(s, &e)) {
             printf("%c ", e);
         }
     }
     printf("\n");
-    printf("  (6)Õ»Îª%s\n", (StackEmpty(s) ? "¿Õ" : "·Ç¿Õ"));
-    printf("  (7)ÊÍ·ÅÕ»\n");
+    printf("  (6)æ ˆä¸º%s\n", (StackEmpty(s) ? "ç©º" : "éç©º"));
+    printf("  (7)é‡Šæ”¾æ ˆ\n");
     DestroyStack(&s);
     return 0;
 }

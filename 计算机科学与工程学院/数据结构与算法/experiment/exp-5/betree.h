@@ -1,4 +1,4 @@
-// betree.h
+﻿// betree.h
 #ifndef BETREE_H
 #define BETREE_H
 

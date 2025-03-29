@@ -1,35 +1,35 @@
-#include "betree.h"
+ï»¿#include "betree.h"
 
 int main() {
     BTNode* b = NULL;
     CreateBTree(&b, "A(B(D,E(H(J,K(L,M(,N))))),C(F,G(,I)))");
-    printf("¶ş²æÊ÷b:"); DispBTree(b); printf("\n");
+    printf("äºŒå‰æ ‘b:"); DispBTree(b); printf("\n");
 
-    printf("²ã´Î±éÀúĞòÁĞ: ");
+    printf("å±‚æ¬¡éå†åºåˆ—: ");
     TravLevel(b);
     printf("\n");
 
-    printf("ÏÈĞò±éÀúĞòÁĞ:\n");
-    printf("    µİ¹éËã·¨: ");
+    printf("å…ˆåºéå†åºåˆ—:\n");
+    printf("    é€’å½’ç®—æ³•: ");
     PreOrder(b);
     printf("\n");
-    printf("  ·Çµİ¹éËã·¨: ");
+    printf("  éé€’å½’ç®—æ³•: ");
     PreOrder1(b);
     printf("\n");
 
-    printf("ÖĞĞò±éÀúĞòÁĞ:\n");
-    printf("    µİ¹éËã·¨: ");
+    printf("ä¸­åºéå†åºåˆ—:\n");
+    printf("    é€’å½’ç®—æ³•: ");
     InOrder(b);
     printf("\n");
-    printf("  ·Çµİ¹éËã·¨: ");
+    printf("  éé€’å½’ç®—æ³•: ");
     InOrder1(b);
     printf("\n");
 
-    printf("ºóĞò±éÀúĞòÁĞ:\n");
-    printf("    µİ¹éËã·¨: ");
+    printf("ååºéå†åºåˆ—:\n");
+    printf("    é€’å½’ç®—æ³•: ");
     PostOrder(b);
     printf("\n");
-    printf("  ·Çµİ¹éËã·¨: ");
+    printf("  éé€’å½’ç®—æ³•: ");
     PostOrder1(b);
     printf("\n");
 

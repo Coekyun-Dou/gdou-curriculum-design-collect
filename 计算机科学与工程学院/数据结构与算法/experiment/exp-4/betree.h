@@ -1,8 +1,8 @@
-// betree.h
+ï»¿// betree.h
 #ifndef BETREE_H
 #define BETREE_H
 
-#define MaxSize 100  // ¶¨Òå×î´óÕ»´óĞ¡
+#define MaxSize 100  // å®šä¹‰æœ€å¤§æ ˆå¤§å°
 
 typedef char ElemType;
 typedef struct node {

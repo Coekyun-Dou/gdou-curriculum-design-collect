@@ -1,16 +1,16 @@
-#pragma once
+ï»¿#pragma once
 #ifndef SEQLIST_H
 #define SEQLIST_H
 
 #include <stdio.h>
 #define MAXL 100
 
-typedef int KeyType; // ¶¨Òå¹Ø¼ü×ÖÀàĞÍÎªint
+typedef int KeyType; // å®šä¹‰å…³é”®å­—ç±»å‹ä¸ºint
 
 typedef struct {
-    KeyType key; // ¹Ø¼ü×ÖÏî
-    char data;   // ÆäËûÊı¾İÏî£¬ÀàĞÍÎªchar
-} RecType;       // ²éÕÒÔªËØµÄÀàĞÍ
+    KeyType key; // å…³é”®å­—é¡¹
+    char data;   // å…¶ä»–æ•°æ®é¡¹ï¼Œç±»å‹ä¸ºchar
+} RecType;       // æŸ¥æ‰¾å…ƒç´ çš„ç±»å‹
 
 void CreateList(RecType R[], KeyType keys[], int n);
 void DispList(RecType R[], int n);
